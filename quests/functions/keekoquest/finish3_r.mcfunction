@@ -49,3 +49,6 @@ execute positioned ~ ~ ~ as @p[tag=qst] at @s run give @s mythicmetals:hallowed_
 execute positioned ~ ~ ~ as @p[tag=qst] at @s run give @s mythicmetals:silver_ingot{display:{Name:'[{"text":"Silver Bar","italic":false,"color":"aqua"}]',Lore:['[{"text":"The preffered currency for certain","italic":false}]','[{"text":"goods","italic":false}]']}} 1
 execute positioned ~ ~ ~ as @p[tag=qst] at @s run tag @s add qst_e
 execute positioned ~ ~ ~ as @p[tag=qst] at @s run tag @s remove qst
+execute positioned 505.51 67.00 1835.52 run tp @e[type=horse,tag=Eddie] ~ 10000 ~
+execute positioned 505.51 10000 1835.52 run kill @e[type=horse,tag=Eddie,limit=1,distance=..30,sort=nearest]
+execute positioned 505.51 67.00 1835.52 as @e[name="Stablekeeper Keeko",type=villager] run tag @s remove tempd

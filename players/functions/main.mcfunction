@@ -35,8 +35,7 @@ execute if score @s Settings matches -2147483648.. unless score @s Settings matc
 execute if score @s avpod.menu_press matches -2147483648.. unless score @s avpod.menu_press matches 0 run function players:triggers/avpod_root
 execute if score @s d.relic_vessel matches -2147483648.. unless score @s d.relic_vessel matches 0 run function entities:dropped_items/devotion/vessel/give/trigger
 execute if score @s terminus.compass matches -2147483648.. unless score @s terminus.compass matches 0 run function terminus:gifts/trigger
-# Cynthia's quest trigger patch
-execute as @s run function triggerpatch:quests/tick
+
 
 #----#
 #WORM#

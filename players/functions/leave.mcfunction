@@ -92,3 +92,5 @@ execute as @a[advancements={weapons:bundle=true}] run execute as @a run fmvariab
 execute as @a[advancements={weapons:tempest=true}] run execute as @a run fmvariable set tempest false 1
 execute as @a[advancements={weapons:eldorite=true}] run execute as @a run fmvariable set eldorite false 1
 execute as @a[advancements={weapons:destinyblade=true}] run execute as @a run fmvariable set dblade false 1
+
+scoreboard players enable @a dlc

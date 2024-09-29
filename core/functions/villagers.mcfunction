@@ -243,7 +243,7 @@ execute if score count_all towers matches 0.. run execute positioned 4136 42 -52
 
 
 #Quests
-execute positioned 505.51 67.00 1835.52 as @e[name="Stablekeeper Keeko",type=villager,tag=!qend] if entity @a[distance=..3,tag=qst,tag=!qst_e] if entity @e[type=horse,tag=Eddie,distance=..4] run function quests:keekoquest/finish
+execute positioned 505.51 67.00 1835.52 as @e[name="Stablekeeper Keeko",type=villager,tag=!qend,tag=!tempd] if entity @a[distance=..3,tag=qst,tag=!qst_e] if entity @e[type=horse,tag=Eddie,distance=..4] run function quests:keekoquest/finish
 execute positioned 505.51 67.00 1835.52 as @e[name="Stablekeeper Keeko",type=villager,tag=!qstart,tag=!qend] if entity @a[distance=..3,tag=!qst,tag=!qst_e] run function quests:keekoquest/base
 execute positioned 505.51 67.00 1835.52 as @e[name="Stablekeeper Keeko",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
 
@@ -255,7 +255,7 @@ execute positioned 1068.89 66.00 1964.35 as @e[name="Cinder",type=villager,tag=!
 execute positioned 1068.89 66.00 1964.35 as @e[name="Cinder",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
 execute positioned 1092.56 66.00 1967.79 as @e[name="Slypador",type=villager,distance=..4] unless score #sly int matches 1 run execute positioned ~ ~ ~ as @p[tag=qst3] run schedule function quests:cinderquest/why 5t
 
-execute positioned -2718.36 64.00 -1657.49 as @e[name="Melon Farmer Casey",type=villager,tag=!qend,tag=qstarted] if entity @a[distance=..3,tag=qst4,tag=!qst4_e] if block -2726 66 -1796 air run execute positioned ~ ~ ~ as @p[tag=qst4] run function quests:caseyquest/finish
+execute positioned -2718.36 64.00 -1657.49 as @e[name="Melon Farmer Casey",type=villager,tag=!qend,tag=qstarted,tag=!tempd] if entity @a[distance=..3,tag=qst4,tag=!qst4_e] if block -2726 66 -1796 air run execute positioned ~ ~ ~ as @p[tag=qst4] run function quests:caseyquest/finish
 execute positioned -2718.36 64.00 -1657.49 as @e[name="Melon Farmer Casey",type=villager,tag=!qstart,tag=!qend] if entity @a[distance=..3,tag=!qst4,tag=!qst4_e] run function quests:caseyquest/base
 execute positioned -2718.36 64.00 -1657.49 as @e[name="Melon Farmer Casey",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
 
@@ -283,7 +283,7 @@ execute positioned 2290.49 50.00 2488.49 as @e[name="Music God Chris",type=villa
 execute positioned 2290.49 50.00 2488.49 as @e[name="Music God Chris",type=villager,tag=!qstart,tag=!qend] if entity @a[distance=..3,tag=!qst9,tag=!qst9_e] run function quests:chrisquest/base
 execute positioned 2290.49 50.00 2488.49 as @e[name="Music God Chris",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
 
-execute positioned 6105.43 77.00 -1144.57 as @e[name="gamer",type=villager,tag=!qend,tag=qstarted] if entity @a[distance=..3,tag=qst10,tag=!qst10_e] if score #lighthouse int matches 0 run execute positioned ~ ~ ~ as @p[tag=qst10] run function quests:gamerquest/finish
+execute positioned 6105.43 77.00 -1144.57 as @e[name="gamer",type=villager,tag=!qend,tag=qstarted,tag=!tempd] if entity @a[distance=..3,tag=qst10,tag=!qst10_e] if score #lighthouse int matches 0 run execute positioned ~ ~ ~ as @p[tag=qst10] run function quests:gamerquest/finish
 execute positioned 6105.43 77.00 -1144.57 as @e[name="gamer",type=villager,tag=!qstart,tag=!qend] if entity @a[distance=..3,tag=!qst10,tag=!qst10_e] run function quests:gamerquest/base
 execute positioned 6105.43 77.00 -1144.57 as @e[name="gamer",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
 
@@ -292,8 +292,8 @@ execute positioned 31.48 67.00 5263.55 as @e[name="Russell",type=villager,tag=!q
 execute positioned 31.48 67.00 5263.55 as @e[name="Russell",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
 execute positioned -46.48 65.00 5338.52 as @e[name="Russell's Friend",type=villager,tag=!collect] if entity @a[distance=..3,tag=qst11,tag=!qst11_e] run function quests:russellquest/givepowder
 
-execute positioned 4167.51 66.00 1777.46 as @e[name="Rift",type=villager,tag=!qend] if entity @a[distance=..3,tag=qst12f] run execute positioned ~ ~ ~ as @p[tag=qst12f] unless score #DLC repeatable matches 1 run function quests:riftquest/1
-execute positioned 4167.51 66.00 1777.46 as @e[name="Rift",type=villager,tag=!qend] if entity @a[distance=..3,tag=qst12f] run execute positioned ~ ~ ~ as @p[tag=qst12f] if score #DLC repeatable matches 1 run function quests:riftquest/1_r
+execute positioned 4167.51 66.00 1777.46 as @e[name="Rift",type=villager,tag=!qend,tag=!tempd] if entity @a[distance=..3,tag=qst12f] run execute positioned ~ ~ ~ as @p[tag=qst12f] unless score #DLC repeatable matches 1 run function quests:riftquest/1
+execute positioned 4167.51 66.00 1777.46 as @e[name="Rift",type=villager,tag=!qend,tag=!tempd] if entity @a[distance=..3,tag=qst12f] run execute positioned ~ ~ ~ as @p[tag=qst12f] if score #DLC repeatable matches 1 run function quests:riftquest/1_r
 
 execute positioned 4167.51 66.00 1777.46 as @e[name="Rift",type=villager,tag=!qstart,tag=!qend] if entity @a[distance=..3,tag=!qst12,tag=!qst12_e] run function quests:riftquest/base
 execute positioned 4167.51 66.00 1777.46 as @e[name="Rift",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
@@ -316,8 +316,8 @@ execute positioned -1571.48 61.00 -494.49 as @e[name="Corvidiot",type=villager,t
 execute positioned -1571.48 61.00 -494.49 as @e[name="Corvidiot",type=villager,tag=!qstart,tag=!qend] if entity @a[distance=..3,tag=!qst14] run function quests:corvidiotquest/base
 execute positioned -1571.48 61.00 -494.49 as @e[name="Corvidiot",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
 
-execute in minecraft:lodahr positioned 257.50 86.00 -811.50 as @e[name="Vahid",type=villager,tag=!qend] if entity @a[distance=..3,tag=qst15] run execute positioned ~ ~ ~ as @p[tag=qst15,tag=!qst15_e] if predicate players:holding/quest/land_salmon run function quests:vahidquest/detect
-execute in minecraft:lodahr positioned 257.50 86.00 -811.50 as @e[name="Vahid",type=villager,tag=!qstart,tag=!qend] if entity @a[distance=..3,tag=!qst15,tag=!qst15_e] run function quests:vahidquest/base
-execute in minecraft:lodahr positioned 257.50 86.00 -811.50 as @e[name="Vahid",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
+execute positioned 31.48 67.00 5263.55 as @e[name="Vahid",type=villager,tag=!qend] if entity @a[distance=..3,tag=qst15] run execute positioned ~ ~ ~ as @p[tag=qst15,tag=!qst15_e] if predicate players:holding/quest/land_salmon run function quests:vahidquest/detect
+execute positioned 31.48 67.00 5263.55 as @e[name="Vahid",type=villager,tag=!qstart,tag=!qend] if entity @a[distance=..3,tag=!qst15,tag=!qst15_e] run function quests:vahidquest/base
+execute positioned 31.48 67.00 5263.55 as @e[name="Vahid",type=villager,tag=!qend] unless entity @a[distance=..3] run tag @s remove qstart
 
 execute positioned -1265.29 46.00 -4060.85 if entity @a[distance=..10] unless score #gotshield bool matches 1 if score #1S timer matches 10 run particle minecraft:firework -1261.57 47.60 -4062.42 0.2 0.2 0.2 1 50 
