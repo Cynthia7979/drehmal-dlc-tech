@@ -1,4 +1,6 @@
 tag @s add qstart
-tellraw @p ["","<Daniel> ",{"text":"Hey you there! Do you have a moment?","color":"dark_green"},"\n",{"text":"[Yes]","color":"yellow","clickEvent":{"action":"run_command","value":"/execute unless entity @s[tag=qst13] run function quests:danielquest/accept"},"hoverEvent":{"action":"show_text","contents":["Yes"]}},{"text":" [No]","color":"red","clickEvent":{"action":"run_command","value":"/execute unless entity @s[tag=qst13] run effect clear @s slowness"},"hoverEvent":{"action":"show_text","contents":["No"]}}]
+scoreboard players reset @p tgrptch.daniel_accept
+scoreboard players enable @p tgrptch.daniel_accept
+tellraw @p ["","<Daniel> ",{"text":"Hey you there! Do you have a moment?","color":"dark_green"},"\n",{"text":"[Yes]","color":"yellow","clickEvent":{"action":"run_command","value":"/trigger tgrptch.daniel_accept"},"hoverEvent":{"action":"show_text","contents":["Yes"]}},{"text":" [No]","color":"red","clickEvent":{"action":"run_command","value":"/trigger tgrptch.quest_deny"},"hoverEvent":{"action":"show_text","contents":["No"]}}]
 playsound entity.villager.ambient player @a ~ ~ ~ 1 1 
 effect give @p slowness 60 10 true
