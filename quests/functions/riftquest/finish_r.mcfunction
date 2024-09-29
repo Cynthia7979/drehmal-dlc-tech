@@ -103,3 +103,5 @@ execute positioned ~ ~ ~ as @p[tag=qst12] at @s run give @s mythicmetals:tin_ing
 execute positioned ~ ~ ~ as @p[tag=qst12] at @s run tag @s add qst12_e
 execute positioned ~ ~ ~ as @p[tag=qst12] at @s run tag @s remove qst12
 execute positioned ~ ~ ~ as @p[tag=qst12f] at @s run tag @s remove qst12f
+
+execute positioned 4167.51 66.00 1777.46 as @e[name="Rift",type=villager] run tag @s remove tempd

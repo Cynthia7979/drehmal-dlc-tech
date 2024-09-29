@@ -69,3 +69,5 @@ execute positioned ~ ~ ~ as @p[tag=qst10] at @s run give @s mythicmetals:silver_
 execute positioned ~ ~ ~ as @p[tag=qst10] at @s run tag @s add qst10_e
 execute positioned ~ ~ ~ as @p[tag=qst10] at @s run tag @s remove qst10
 execute positioned 6227 159 -1766 run forceload remove ~ ~
+
+execute positioned 6105.43 77.00 -1144.57 as @e[name="gamer",type=villager] run tag @s remove tempd
