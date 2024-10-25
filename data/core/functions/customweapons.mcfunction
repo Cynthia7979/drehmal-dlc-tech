@@ -46,11 +46,15 @@ execute as @a unless predicate players:holding/thunderclap as @s[scores={thun=..
 execute as @a unless predicate players:holding/thunderclap as @s[scores={thun=160..}] run scoreboard players reset @s thun
 
 
-
-execute as @a if predicate players:holding/shadowblade as @s[scores={use_shad=1..}] if predicate dev:random_chance/8_of_20 run function players:items/shadowblade/main
-execute as @a as @s run execute at @e[tag=bleed,limit=1] run scoreboard players add @s bleed 1
-execute as @a as @s run execute at @e[tag=bleed,limit=1] run function players:items/shadowblade/bleed
-execute as @a as @s run execute unless entity @e[tag=bleed] run scoreboard players reset @s bleed
+# Player who has ever wielded Shadowblade: score(@s, has_shad) = 1
+execute as @a[scores={use_shad=1..}] run scoreboard players set has_shad 1
+# Player who had just used Shadowblade: score(@s, use_shad) = 1..
+execute as @a[scores={use_shad=1..}] if predicate dev:random_chance/8_of_20 run function players:items/shadowblade/main
+# Entity currently affected by Bleed: Has tag(bleeding)
+# Bleed timer (on player): score(@s, bleed_timer)
+execute at @a[scores={has_shad=1}] if entity @e[tag=bleeding] run scoreboard players add @s bleed_timer 1
+execute as @a[scores={has_shad=1}] at @e[tag=bleeding,limit=1] run function players:items/shadowblade/inflict_bleed
+execute as @a[scores={bleed_timer=1..}] unless entity @e[tag=bleeding] run scoreboard players reset @s bleed_timer
 
 
 

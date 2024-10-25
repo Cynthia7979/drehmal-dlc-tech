@@ -954,7 +954,8 @@ scoreboard objectives add use_thun minecraft.used:mcdw.hammer_stormlander
 scoreboard objectives add thun dummy
 
 scoreboard objectives add use_shad minecraft.used:mcdw.sword_sinister
-scoreboard objectives add bleed dummy
+scoreboard objectives add has_shad dummy
+scoreboard objectives add bleed_timer dummy
 
 scoreboard objectives add gaunt_stats dummy
 scoreboard objectives add lucky minecraft.used:mcdw.spear_fortune
