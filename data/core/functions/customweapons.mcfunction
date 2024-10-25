@@ -137,23 +137,13 @@ execute as @e[type=item,nbt={Item:{id:"mythicmetals:star_platinum_nugget"}}] run
 execute as @e[type=glow_item_frame,tag=star] at @s if entity @a[distance=..1] run tag @s remove star
 
 
-execute as @a if predicate players:hold_pocket at @s if predicate players:lodahr as @s run schedule function weapons:give/pocket 5s
-execute as @a if predicate players:hold_pocket at @s if predicate players:lodahr as @s run title @s title {"text":"Teleporting Across Lodahr is Disabled","bold":true,"color":"dark_red"}
-execute as @a if predicate players:hold_pocket at @s if predicate players:lodahr as @s run clear @s fwaystones:pocket_wormhole
+execute as @a if predicate players:hold_pocket if predicate players:lodahr run function dlc:items/refund_pocket_lodahr
 
-execute as @a if predicate players:hold_waystone at @s if predicate players:lodahr as @s run schedule function weapons:give/waystone 5s
-execute as @a if predicate players:hold_waystone at @s if predicate players:lodahr as @s run title @s title {"text":"Teleporting Across Lodahr is Disabled","bold":true,"color":"dark_red"}
-execute as @a if predicate players:hold_waystone at @s if predicate players:lodahr as @s run clear @s fwaystones:waystone
+execute as @a if predicate players:hold_waystone if predicate players:lodahr run function dlc:items/refund_waystone_lodahr
 
-execute as @a if predicate players:hold_pocket as @s[tag=supersoldier] run schedule function weapons:give/pocket 5s
-execute as @a if predicate players:hold_pocket as @s[tag=supersoldier] run title @s title {"text":"no","bold":true,"color":"dark_red"}
-execute as @a if predicate players:hold_pocket as @s[tag=supersoldier] run clear @s fwaystones:pocket_wormhole
+execute as @a[tag=supersoldier] if predicate players:hold_pocket run function dlc:items/refund_pocket_supersoldier
 
-execute as @a if predicate players:hold_waystone as @s[tag=supersoldier] run schedule function weapons:give/waystone 5s
-execute as @a if predicate players:hold_waystone as @s[tag=supersoldier] run title @s title {"text":"no","bold":true,"color":"dark_red"}
-execute as @a if predicate players:hold_waystone as @s[tag=supersoldier] run clear @s fwaystones:waystone
-
-
+execute as @a[tag=supersoldier] if predicate players:hold_waystone run function dlc:items/refund_waystone_supersoldier
 
 execute as @e[tag=obscythe] run execute at @s run function players:items/obv/entity
 
