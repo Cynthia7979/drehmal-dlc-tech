@@ -1,5 +1,6 @@
 {
   "values": [
-"core:init"
+    "core:init",
+    "triggerpatch:load"
   ]
 }
