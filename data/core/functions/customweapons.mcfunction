@@ -104,25 +104,23 @@ execute as @a run execute if predicate players:holding/destiny run execute at @s
 execute as @a run execute unless predicate players:holding/destiny run scoreboard players reset @s use_destiny
 execute as @a run execute unless predicate players:holding/destiny run scoreboard players reset @s destiny_cd
 
-execute as @a run execute at @s as @s if predicate players:adventure_areas unless predicate players:locations/in_terminus if data entity @s cardinal_components.trinkets:trinkets.legs.belt.Items[{id:"artifacts:cloud_in_a_bottle"}] run scoreboard players add @s stop 1
+execute as @a if predicate players:adventure_areas unless predicate players:locations/in_terminus if data entity @s cardinal_components.trinkets:trinkets.legs.belt.Items[{id:"artifacts:cloud_in_a_bottle"}] run scoreboard players add @s stop 1
 
+execute as @a[tag=!cloud,scores={stop=40..}] run function players:nocloud
+execute as @a[tag=cloud] run function players:checkcloud
 
-execute as @a as @s[tag=!cloud,scores={stop=40..}] run function players:nocloud
-execute as @a as @s[tag=cloud] run function players:checkcloud
+execute as @a[tag=cloud] if predicate players:locations/in_terminus run function players:givecloud
+execute as @a[tag=cloud] unless predicate players:adventure_areas run function players:givecloud
 
-execute as @a run execute at @s as @s[tag=cloud] unless predicate players:adventure_areas run function players:givecloud
+execute as @a[advancements={weapons:wings=true},tag=!wings] if predicate players:adventure_areas unless predicate players:locations/in_terminus if data entity @s cardinal_components.trinkets:trinkets.chest.cape.Items[{id:"icarus:magenta_mechanical_leather_wings"}] run function players:nowings
 
-execute as @a[advancements={weapons:wings=true},tag=!wings] run execute at @s as @s if predicate players:adventure_areas unless predicate players:locations/in_terminus if data entity @s cardinal_components.trinkets:trinkets.chest.cape.Items[{id:"icarus:magenta_mechanical_leather_wings"}] run execute as @s run function players:nowings
+execute as @a[advancements={weapons:wings=true},tag=!wings] if predicate players:lodahr unless predicate players:locations/in_terminus if data entity @s cardinal_components.trinkets:trinkets.chest.cape.Items[{id:"icarus:magenta_mechanical_leather_wings"}] run function players:nowings
 
-execute as @a[advancements={weapons:wings=true},tag=!wings] run execute at @s as @s if predicate players:lodahr unless predicate players:locations/in_terminus if data entity @s cardinal_components.trinkets:trinkets.chest.cape.Items[{id:"icarus:magenta_mechanical_leather_wings"}] run execute as @s run function players:nowings
+execute as @a[tag=wings] run function players:checkwings
 
-execute as @a as @s[tag=wings] run function players:checkwings
+execute as @a[tag=wings,advancements={weapons:wings=true,advancements:primordial/enter_yav=false,advancements:primordial/khive_angy=false}] unless predicate players:lodahr unless predicate players:adventure_areas run function players:givewings
 
-
-
-execute as @a[tag=wings,advancements={weapons:wings=true,advancements:primordial/enter_yav=false,advancements:primordial/khive_angy=false}] run execute at @s as @s run execute unless predicate players:lodahr unless predicate players:adventure_areas run execute as @s run function players:givewings
-
-execute as @a[tag=wings,advancements={weapons:wings=true,advancements:primordial/enter_yav=true,advancements:primordial/khive_angy=true}] run execute at @s as @s run execute unless predicate players:lodahr unless predicate players:adventure_areas run execute as @s run function players:givewings
+execute as @a[tag=wings,advancements={weapons:wings=true,advancements:primordial/enter_yav=true,advancements:primordial/khive_angy=true}] unless predicate players:lodahr unless predicate players:adventure_areas run function players:givewings
 
 execute as @a[advancements={weapons:wings=true,advancements:primordial/khive_angy=true,advancements:primordial/enter_yav=false}] run function players:nowings
 
