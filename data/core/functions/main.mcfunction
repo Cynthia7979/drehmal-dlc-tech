@@ -200,7 +200,7 @@ execute unless score #termstart bool matches 1 run particle minecraft:dust 1 0 0
 
 execute if score #10terminus100 bool matches 1 unless score #clearancedialogue bool matches 1 run function core:scene/avsal/perms/0
 
-execute as @a as @s[scores={dlc=1}] run function dlc:triggerdlc
+execute as @a[scores={dlc=1}] run function dlc:triggerdlc
 
 function core:scene/lodahr_portals/main
 
