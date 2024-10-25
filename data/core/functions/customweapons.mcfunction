@@ -33,7 +33,7 @@ execute as @a unless predicate players:holding/leviathan as @s[scores={levi_reac
 execute as @a if predicate players:holding/leviathan as @s[scores={levi_reach=..140}] if predicate dev:entity_properties/effects/haste run execute as @s at @s positioned ~ ~1 ~ run function particle:effects/mist
 execute as @a if predicate players:holding/leviathan_u as @s[scores={levi_kills=5..}] run execute as @s at @s run title @s actionbar {"text":"Apotheosis is ready for use","color":"green"}
 execute as @a if predicate players:holding/leviathan_u as @s[scores={levi_kills=5..}] if predicate dev:entity_properties/flags/is_sneaking run function players:items/levi/apotheosis
-execute as @e if predicate players:is_levi run team join leviathan 
+execute as @e[type=item] if predicate players:is_levi run team join leviathan 
 execute as @e[type=item] if predicate players:is_levi run data merge entity @s {Glowing:1b,Age:-32768,Invulnerable:1b,Health:2048}
 
 
