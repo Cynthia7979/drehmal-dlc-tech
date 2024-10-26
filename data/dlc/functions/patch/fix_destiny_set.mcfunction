@@ -1,0 +1,3 @@
+scoreboard objectives add destiny_set_charge dummy
+scoreboard objectives add destiny_set_crown_charge dummy
+scoreboard objectives add destiny_edge dummy

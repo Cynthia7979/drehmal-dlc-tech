@@ -965,8 +965,8 @@ team modify Infernal color gold
 scoreboard objectives add fish dummy
 scoreboard objectives add catch minecraft.custom:minecraft.fish_caught
 
-scoreboard objectives add destiny_s dummy
-scoreboard objectives add destiny dummy
+scoreboard objectives add destiny_edge dummy
+scoreboard objectives add destiny_set_charge dummy
 scoreboard objectives add destiny_cd dummy
 scoreboard objectives add use_destiny minecraft.used:mythicmetals.celestium_sword
 
@@ -1014,5 +1014,5 @@ scoreboard objectives add avHorseID_b dummy
 scoreboard objectives add anyr_timer dummy 
 difficulty hard 
 
-scoreboard objectives add destinyc dummy
+scoreboard objectives add destiny_set_crown_charge dummy
 scoreboard objectives add mastermode dummy

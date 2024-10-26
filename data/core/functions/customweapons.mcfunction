@@ -75,33 +75,19 @@ execute as @a if predicate players:holding/luckyspear as @s[scores={lucky=9..}] 
 
 
 
-execute as @a[tag=!destiny] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_helmet if predicate players:sneak run scoreboard players add @s destiny 1
+execute as @a[tag=!destiny_set] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_helmet if predicate players:sneak run function players:items/destiny_armor/charge
 
-# TODO: Combine into a single "check" function
-execute as @a[tag=!destiny,scores={destiny=20}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_helmet if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 1.2
-execute as @a[tag=!destiny,scores={destiny=40}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_helmet if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 1.4
-execute as @a[tag=!destiny,scores={destiny=60}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_helmet if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 1.6
-execute as @a[tag=!destiny,scores={destiny=80}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_helmet if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 1.8
-execute as @a[tag=!destiny,scores={destiny=100}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_helmet if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 2
-execute as @a[tag=!destiny,scores={destiny=100..}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_helmet if predicate players:sneak run function players:items/destiny_armor/main
+execute as @a[tag=!destiny_set_crown] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_crown if predicate players:sneak run function players:items/destiny_armor/charge_crown
 
-execute as @a[tag=!destinyc] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_crown if predicate players:sneak run scoreboard players add @s destinyc 1
-execute as @a[tag=!destinyc,scores={destinyc=100..}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_crown if predicate players:sneak run function players:items/destiny_armor/main_c
-execute as @a[tag=!destinyc,scores={destinyc=20}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_crown if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 2
-execute as @a[tag=!destinyc,scores={destinyc=40}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_crown if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 1.8
-execute as @a[tag=!destinyc,scores={destinyc=60}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_crown if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 1.6
-execute as @a[tag=!destinyc,scores={destinyc=80}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_crown if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 1.4
-execute as @a[tag=!destinyc,scores={destinyc=100}] if predicate players:wearing_destiny_boots if predicate players:wearing_destiny_chestplate if predicate players:wearing_destiny_leggings if predicate players:wearing_destiny_crown if predicate players:sneak run playsound minecraft:block.enchantment_table.use master @a ~ ~ ~ 1 1
-
-execute as @a[score={destiny=1..}] unless predicate players:sneak run scoreboard players reset @s destiny
-execute as @a[score={destinyc=1..}] unless predicate players:sneak run scoreboard players reset @s destinyc
-execute as @a[tag=destiny] if predicate players:sneak run effect give @s blindness 2 2 true
-execute as @a[tag=destiny] if predicate players:sneak run effect give @s slowness 2 2 true
+execute as @a[score={destiny_set_charge=1..}] unless predicate players:sneak run scoreboard players reset @s destiny_set_charge
+execute as @a[score={destiny_set_crown_charge=1..}] unless predicate players:sneak run scoreboard players reset @s destiny_set_crown_charge
+execute as @a[tag=destiny_set] if predicate players:sneak run effect give @s blindness 2 2 true
+execute as @a[tag=destiny_set] if predicate players:sneak run effect give @s slowness 2 2 true
 
 
-execute as @a[scores={destiny_s=1..}] unless predicate players:holding/destiny run scoreboard players reset @s destiny_s
-execute as @a if predicate players:holding/destiny run scoreboard players add @s destiny_s 1
-execute as @a[scores={destiny_cd=1..,destiny_s=20..}] if predicate players:holding/destiny run function players:items/destiny_blade/main 
+execute as @a[scores={destiny_edge=1..}] unless predicate players:holding/destiny run scoreboard players reset @s destiny_edge
+execute as @a if predicate players:holding/destiny run scoreboard players add @s destiny_edge 1
+execute as @a[scores={destiny_cd=1..,destiny_edge=20..}] if predicate players:holding/destiny run function players:items/destiny_blade/main 
 execute as @a[scores={use_destiny=1..}] if predicate players:holding/destiny if entity @e[predicate=entities:hurt,type=!player,distance=..8] run scoreboard players add @s destiny_cd 1
 execute as @a[scores={destiny_cd=1..}] unless predicate players:holding/destiny run scoreboard players reset @s use_destiny
 execute as @a[scores={use_destiny=1..}] unless predicate players:holding/destiny run scoreboard players reset @s destiny_cd
