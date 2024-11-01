@@ -137,9 +137,9 @@ execute as @e[type=item,nbt={Item:{id:"mythicmetals:star_platinum_nugget"}}] run
 execute as @e[type=glow_item_frame,tag=star] at @s if entity @a[distance=..1] run tag @s remove star
 
 
-execute as @a if predicate players:hold_pocket if predicate players:lodahr run function dlc:items/refund_pocket_lodahr
+execute as @a if predicate players:hold_pocket at @s if predicate players:lodahr run function dlc:items/refund_pocket_lodahr
 
-execute as @a if predicate players:hold_waystone if predicate players:lodahr run function dlc:items/refund_waystone_lodahr
+execute as @a if predicate players:hold_waystone at @s if predicate players:lodahr run function dlc:items/refund_waystone_lodahr
 
 execute as @a[tag=supersoldier] if predicate players:hold_pocket run function dlc:items/refund_pocket_supersoldier
 

@@ -1,3 +1,3 @@
 title @s title {"text":"no","bold":true,"color":"dark_red"}
 clear @s fwaystones:waystone
-give @p command_block{CustomModelData:1000000,RunicCatalyst:1b,display:{Lore:['{"text":"A small, magical orb valued by"}','{"text":"traders and arcanists. They have"}','{"text":"several applications in both"}','{"text":"magical creations and technology."}'],Name:'{"text":"Runic Catalyst","color":"aqua","italic":false}'}} 8
+function dlc:items/give_runic_catalysts_8
